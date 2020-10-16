@@ -43,6 +43,7 @@ const encryptString = (string, rotation) => {
     code = char.charCodeAt();
     code += rotation;
     // console.log(code);
+    // console.log(code);
     if ((check = /[^a-zA-Z]/.test(char))) {
       //   console.log(check);
       newChar += char;
@@ -50,20 +51,24 @@ const encryptString = (string, rotation) => {
       continue;
     }
     if (code > 90 && code <= 122 && isLowerCase(char)) {
-      //   console.log("1", code, char);
+      console.log("1", code, char);
       newChar += String.fromCharCode(code);
       //   console.log(newChar);
     } else if (code > 97 && isLowerCase(char)) {
-      //   console.log("2");
+      console.log("2");
+      //   console.log(code);
       newChar += String.fromCharCode(code - 26);
     } else if (code > 90 && !isLowerCase(char)) {
-      //   console.log("3");
+      console.log("3");
+      //   console.log(code);
       newChar += String.fromCharCode(code - 26);
     } else if (code < 90 && !isLowerCase(char)) {
+      newChar += String.fromCharCode(code);
+    } else {
       newChar += String.fromCharCode(code);
     }
   }
   return newChar;
 };
 
-console.log(encryptString("middle-Outz", 28));
+console.log(encryptString("PP", 62));
