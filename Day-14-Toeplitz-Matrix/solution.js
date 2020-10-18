@@ -9,9 +9,8 @@ const isToeplitzMatrix = (matrix) => {
         return false;
       }
     }
-    return true;
   }
-  return bool;
+   return true;
 };
 
 let matrix = [
