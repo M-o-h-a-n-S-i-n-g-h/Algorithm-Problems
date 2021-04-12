@@ -8,7 +8,7 @@ class Solution {
     for (let i = 0; i < this.numbers.length; i++) {
       this.numbers[i] === i ? num.push(this.numbers[i]) : false;
     }
-    if (num.length == 0) {
+    if (num.length === 0) {
       return -1;
     } else {
       return Math.min(...num);

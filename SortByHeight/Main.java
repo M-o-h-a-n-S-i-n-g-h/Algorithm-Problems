@@ -28,8 +28,8 @@ public class Main {
         return array;
     }
 
-    public static void main(String args[]) {
-        int[] array = { -1, 150, 190, 170, -1, -1, 160, 180 };
+    public static void main(String[] args) {
+        int[] array = {-1, 150, 190, 170, -1, -1, 160, 180};
         int[] result = sortByHeight(array);
         System.out.println(Arrays.toString(result));
     }
