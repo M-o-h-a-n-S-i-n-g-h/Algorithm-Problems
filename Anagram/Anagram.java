@@ -16,18 +16,19 @@ public class Anagram {
             tracker[i - 'a']++;
         }
 
-        for (char i : s1.toCharArray()) {
-            if ((tracker[i - 'a'] & 1) == 1) {
+        for (int i : tracker) {
+            if ((i & 1) == 1) {
                 return "Not an anagram";
             }
         }
+
         return "Anagram";
     }
 
 
     public static void main(String[] args) {
-        String s1 = "geeksforgeeks";
-        String s2 = "geeksgeeksfor";
+        String s1 = "care";
+        String s2 = "race";
         String result = findAnagram(s1.toLowerCase(), s2.toLowerCase());
         System.out.println(result);
     }
