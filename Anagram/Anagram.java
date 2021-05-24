@@ -6,20 +6,16 @@ public class Anagram {
         if (s1.length() != s2.length()) {
             return "Not an anagram";
         }
+        int c = 0;
+        int d = 0;
 
-        int[] tracker = new int[26];
-        for (char i : s1.toCharArray()) {
-            tracker[i - 'a']++;
+        for(int i = 0; i < s1.length(); i++) {
+            c += +s1.charAt(i);
+            d += +s2.charAt(i);
         }
 
-        for (char i : s2.toCharArray()) {
-            tracker[i - 'a']++;
-        }
-
-        for (int i : tracker) {
-            if ((i & 1) == 1) {
-                return "Not an anagram";
-            }
+        if(c != d) {
+            return "Not an anagram";
         }
 
         return "Anagram";
@@ -27,8 +23,8 @@ public class Anagram {
 
 
     public static void main(String[] args) {
-        String s1 = "care";
-        String s2 = "race";
+        String s1 = "race";
+        String s2 = "care";
         String result = findAnagram(s1.toLowerCase(), s2.toLowerCase());
         System.out.println(result);
     }
